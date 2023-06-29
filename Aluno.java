@@ -1,13 +1,36 @@
-public class Aluno 
-{
-    public String nome;
-    public float media; 
-    public Aluno(String nome)
-    {
+public class Aluno {
+    String nome;
+    float media;
+
+    public Aluno() {
+
+    }
+
+    public Aluno(String nome, float media) {
+        setNome(nome);// Setando o Nome do Aluno
+        setMedia(media);// Setando a Media do Aluno
+    }
+
+    public String getNome() { // recebendo o Nome do aluno
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    public void CadastrarNotas(float nota1, float nota2)
-    {
-        media = (nota1 + nota2) / 2;
+
+    public float getMedia() {
+        return media;
     }
+
+    public void setMedia(Float media) // Recebendo a Media do aluno
+    {
+        this.media = media;
+    }
+
+    void listar() {
+        System.out.println("\nNome: " + this.nome);
+        System.out.println("\nMedia: " + this.media);
+    }
+
 }
