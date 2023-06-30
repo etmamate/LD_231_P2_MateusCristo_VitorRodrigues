@@ -33,4 +33,15 @@ public class Aluno {
         System.out.println("\nMedia: " + this.media);
     }
 
+    void Aprovados() {
+        if (media >= 60) {
+            System.out.println("\nNome: " + this.nome + "\nAprovado!");
+        }
+    }
+
+    void Reprovados() {
+        if (media < 60) {
+            System.out.println("\nNome: " + this.nome + "\nReprovado!");
+        }
+    }
 }

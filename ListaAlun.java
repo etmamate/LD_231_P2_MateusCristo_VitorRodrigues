@@ -18,8 +18,17 @@ public class ListaAlun {
         }
     }
 
-    void Aprovados() {
-        System.out.println("\nAlunos Aprovados: ");
-        if(media < 60)
+    void listarAlunosAprovados() {
+        System.out.println("\nLista de Alunos Aprovados: ");
+        for (Aluno alunoLista : listaAlunos) {
+            alunoLista.Aprovados();
+        }
+    }
+
+    void listarAlunosReprovados() {
+        System.out.println("\nLista de Alunos Reprovados: ");
+        for (Aluno alunoLisAluno : listaAlunos) {
+            alunoLisAluno.Reprovados();
+        }
     }
 }

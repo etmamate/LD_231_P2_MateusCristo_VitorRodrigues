@@ -44,6 +44,15 @@ public class Main {
                 case 2:
                     nLista.listarAlunos();
                     break;
+                case 3:
+                    nLista.listarAlunosAprovados();
+                    break;
+                case 4:
+                    nLista.listarAlunosReprovados();
+                    break;
+                case 5:
+                    System.out.println(menu);
+                    break;
                 default:
             }
         } while (opcao != 0);
