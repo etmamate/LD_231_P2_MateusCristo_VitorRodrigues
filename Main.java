@@ -8,7 +8,6 @@ public class Main {
         Aluno nAluno = new Aluno();
         ListaAlun nLista = new ListaAlun();
         int opcao;
-
         String menu = """
                 1-Cadastrar Aluno/e Nota
                 2-Listar Alunos
@@ -20,6 +19,7 @@ public class Main {
         String breakline = "-".repeat(24);
 
         do {
+            System.out.println("Menu");
             System.out.println(breakline);
             System.out.println(menu);
             System.out.println(breakline);
@@ -30,15 +30,16 @@ public class Main {
                     System.out.println("Insira o nome do Aluno: ");
                     nome = scn.next();
                     System.out.println("\nInsira as duas notas do Aluno: ");
-                    System.out.println("\nPrimeira Nota: ");
+                    System.out.println("Primeira Nota: ");
                     float n1 = scn.nextFloat();
-                    System.out.println("\nSegunda Nota: ");
+                    System.out.println("Segunda Nota: ");
                     float n2 = scn.nextFloat();
 
                     media = (n1 + n2) / 2;
 
-                    nAluno = new Aluno(nome, media);
+                    nAluno = new Aluno(nome, media, opcao);
                     nLista.recebeAluno(nAluno);
+
                     break;
 
                 case 2:
@@ -58,5 +59,4 @@ public class Main {
         } while (opcao != 0);
         scn.close();
     }
-
 }

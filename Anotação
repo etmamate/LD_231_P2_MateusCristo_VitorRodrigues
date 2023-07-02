@@ -1,0 +1,127 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Alunos {
+	public List<Aluno> lista = new ArrayList<Aluno>();
+	public void Cadastrar(String nome){
+		lista.add(new Aluno(nome));
+		System.out.println(nome + " foi cadastrado!");
+	}
+	public void ExibirAlunos(){
+		for (int i = 0; i < lista.size(); i++){
+			System.out.println(lista.get(i).nome);
+		}
+	}
+	public void Reprovados(){
+		for (int i = 0; i < lista.size(); i++){
+			var aluno = lista.get(i);
+			if (aluno.media < 60)
+				System.out.println(aluno.nome + " - Média: " + aluno.media);
+		}
+	}
+	public void Aprovados(){
+		for (int i = 0; i < lista.size(); i++){
+			var aluno = lista.get(i);
+			if (aluno.media >= 60)
+				System.out.println(aluno.nome + " - Média: " + aluno.media);
+		}
+	}
+
+	public Alunos()
+	{
+		// blank line
+	}
+}
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+public class Banana {
+	static String lineBreak = "-".repeat(24);
+    static String menu = """
+            \nMenu
+            1- Cadastro/Alunos
+            2- Exibir Alunos
+            3- Cadastrar Notas
+            4- Alunos Reprovados
+            5- Alunos Aprovados
+            6- Menu
+            0- Sair\n""";
+    public static void main(String[] args) {
+		Alunos alunos = new Alunos();
+		Scanner scn = new Scanner(System.in);
+        System.out.println(menu);
+		int opcao;
+        do {
+            System.out.println(lineBreak);
+            System.out.println("Digite a opção: ");
+            opcao = scn.nextInt();
+            switch (opcao) {
+                case 1:
+                    System.out.println("Nome: ");
+                    String nome = scn.next();
+                    alunos.Cadastrar(nome);
+                    break;
+                case 2:
+                    System.out.println("Alunos: ");
+                    alunos.ExibirAlunos();
+                    break;
+                case 3:
+                    System.out.println("Aluno: ");
+                    String name = scn.next();
+                    Aluno aluno;
+                    try {
+                        aluno = alunos.lista.stream()
+                            .filter(a-> a.nome.toLowerCase().equals(name.toLowerCase()))
+                            .findAny().get();
+                    } catch (NoSuchElementException e) {
+                        System.out.println("Não existe um aluno com esse nome.");
+                        break;
+                    }
+                
+                    System.out.println("Nota 1: ");
+                    float nota1 = scn.nextFloat();
+                    System.out.println("Nota 2: ");
+                    float nota2 = scn.nextFloat();
+
+                    aluno.CadastrarNotas(nota1, nota2);
+                    break;
+                case 4:
+                    System.out.println("Reprovados: ");
+                    alunos.Reprovados();
+                    break;
+                case 5:
+                    System.out.println("Aprovados: ");
+                    alunos.Aprovados();
+                    break;
+
+                case 6:
+                    System.out.println(menu);
+                    break;
+                default:
+            }
+        } while (opcao != 0);
+
+        scn.close();
+	}
+}
+public class Aluno {
+	public String nome;
+	public float media;
+	public Aluno(String nome) {
+		this.nome = nome;
+	}
+	public void CadastrarNotas(float nota1, float nota2){
+		media = (nota1+nota2)/2;
+	}
+}
+
+do {
+    if(listaAlunos.size() < 5)
+    {
+        System.out.println("Maximo de alunos!!!");
+    }
+    else
+    {
+        listaAlunos.add(nAluno);
+    }
+} while (listaAlunos.size() > 5);

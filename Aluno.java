@@ -3,10 +3,10 @@ public class Aluno {
     float media;
 
     public Aluno() {
-
+        // blankline
     }
 
-    public Aluno(String nome, float media) {
+    public Aluno(String nome, float media, int maximoAluno) {
         setNome(nome);// Setando o Nome do Aluno
         setMedia(media);// Setando a Media do Aluno
     }
@@ -30,18 +30,18 @@ public class Aluno {
 
     void listar() {
         System.out.println("\nNome: " + this.nome);
-        System.out.println("\nMedia: " + this.media);
+        System.out.println("Media: \n" + this.media);
     }
 
     void Aprovados() {
-        if (media >= 60) {
-            System.out.println("\nNome: " + this.nome + "\nAprovado!");
+        if (media >= 6) {
+            System.out.println("\nNome: " + this.nome + " APROVADO!\n");
         }
     }
 
     void Reprovados() {
-        if (media < 60) {
-            System.out.println("\nNome: " + this.nome + "\nReprovado!");
+        if (media < 6) {
+            System.out.println("\nNome: " + this.nome + " REPROVADO!\n");
         }
     }
 }

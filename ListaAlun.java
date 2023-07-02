@@ -2,13 +2,21 @@ import java.util.ArrayList;
 
 public class ListaAlun {
     ArrayList<Aluno> listaAlunos;
+    int maximoaluno = 5;
 
     public ListaAlun() {
-        this.listaAlunos = new ArrayList<>();
+        this.listaAlunos = new ArrayList<>(5);
     }
 
     void recebeAluno(Aluno nAluno) {
-        listaAlunos.add(nAluno);
+        if (listaAlunos.size() != 5) {
+            listaAlunos.add(nAluno);
+        }
+        else
+        {
+            System.out.println("MAXIMO ATINGIDO");
+        }
+
     }
 
     void listarAlunos() {
