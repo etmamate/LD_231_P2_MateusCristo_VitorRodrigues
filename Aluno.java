@@ -30,7 +30,7 @@ public class Aluno {
 
     void listar() {
         System.out.println("\nNome: " + this.nome);
-        System.out.println("Media: \n" + this.media);
+        System.out.println("Media: " + this.media);
     }
 
     void Aprovados() {

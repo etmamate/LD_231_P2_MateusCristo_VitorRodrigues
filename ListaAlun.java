@@ -13,8 +13,10 @@ public class ListaAlun {
             listaAlunos.add(nAluno);
         }
         else
-        {
-            System.out.println("MAXIMO ATINGIDO");
+        {   
+            System.out.println("---------------------");
+            System.out.println("!!!MAXIMO ATINGIDO!!!");
+            System.out.println("---------------------");
         }
 
     }

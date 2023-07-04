@@ -19,7 +19,7 @@ public class Main {
         String breakline = "-".repeat(24);
 
         do {
-            System.out.println("Menu");
+            System.out.println("\nMenu");
             System.out.println(breakline);
             System.out.println(menu);
             System.out.println(breakline);
